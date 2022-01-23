@@ -1,0 +1,18 @@
+{% extends "eso/base.html" %}
+
+{% block main-content %}
+
+<h1>Casos Osteopatia</h1>
+
+{% for case in osteopathy_cases %}
+
+<h2>{{case.title}}</h2>
+<div>{{case.description}}</div>
+<img src="{{case.image}}" alt="">
+
+{% endfor %}
+
+
+
+{% endblock %}
+

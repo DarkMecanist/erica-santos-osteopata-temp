@@ -1,0 +1,48 @@
+{% extends "eso/base.html" %}
+
+{% load static %}
+
+{% block main-content %}
+
+<h1>Marcações</h1>
+
+<div><b>Informação importante: </b>{{appointments_description.text}}</div>
+<form method="POST" name="appointment-form" action="/marcacoes/">
+    {% csrf_token %}
+    <div class="appointment-form-field">
+        <label for="appointment-form-name">Nome: </label>
+        <input type="text" id="appointment-form-name" name="name">
+    </div>
+    <div class="appointment-form-field">
+        <label for="appointment-form-phone">Telefone: </label>
+        <input type="tel" id="appointment-form-phone" name="phone">
+    </div>
+    <div class="appointment-form-field">
+        <label for="appointment-form-email">Email(Opcional): </label>
+        <input type="email" id="appointment-form-email" name="email">
+    </div>
+    <div class="appointment-form-field">
+        <label for="appointment-form-day">Data (dd/mm/aaaa): </label>
+        <input type="number" id="appointment-form-day" name="day" max="31" min="1"> /
+        <input type="number" id="appointment-form-month" name="month" max="12" min="1"> /
+        <input type="number" id="appointment-form-year" name="year" min="2021">
+    </div>
+    <div class="appointment-form-field">
+        <label for="appointment-form-hour">Hora: </label>
+        <input type="number" id="appointment-form-hour" name="hour" min="00" max="24"> :
+        <input type="number" id="appointment-form-minutes" name="minutes" min="00" max="60"> h
+    </div>
+    <div class="appointment-form-field">
+        <label for="appointment-form-description">Descrição do problema: </label>
+        <input type="text" id="appointment-form-description" name="description" maxlength="500">
+    </div>
+</form>
+<button class="standard-button" id="appointment-form-button-submit" ng-click="validateAppointmentForm()" name="appointment-form">Agendar Marcação</button>
+<div id="request-response-appointment" class="hidden">
+    <img src="{% static 'eso/media/ajax-loader.gif' %}" alt="loading...">
+</div>
+
+<h3><a href="{% url 'opinion_page' %}">Já teve a sua consulta? Deixe-nos a sua opinião</a></h3>
+
+{% endblock %}
+

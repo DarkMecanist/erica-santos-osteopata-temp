@@ -1,0 +1,1 @@
+web: gunicorn erica_santos_osteopata.wsgi
