@@ -18,7 +18,15 @@
                     <img id="brand-img" src="{% static 'eso/media/logo.png' %}" alt="">
                     <div id="brand-name">Érica Santos</div>
                 </div>
-                <ul class="nav-menu">
+                <button id="navbarToggle" type="button" class="navbar-toggle collapsed hidden-xl hidden-l hidden-m"
+                        data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false"
+                        ng-mouseover="animateNavButton()" ng-mouseleave="deanimateNavButton()"
+                        ng-click="navButtonActivate()">
+                    <hr id="left-tilted-bar">
+                    <hr id="vertical-bar">
+                    <hr id="right-tilted-bar">
+                </button>
+                <ul id="nav-menu-regular" class="nav-menu">
                     <li class="nav-item"><a href="{% url 'home_page' %}">Home</a></li>
                     <li class="nav-item nav-item-expansive">
                         <a href="{% url 'osteopathy_about_page' %}">Osteopatia</a>
@@ -27,6 +35,19 @@
                         <a href="{% url 'osteopathy_history_page' %}">História</a>
                     </li>
                     <li class="nav-item"><a href="{% url 'scheduling_page' %}">Marcações</a></li>
+                    <li class="nav-item"><a href="#contacts">Contactos</a></li>
+                </ul>
+                <ul id="nav-menu-expandable" class="nav-menu">
+                    <li class="nav-item"><a href="{% url 'home_page' %}">Home</a></li>
+                    <hr class="nav-item-separator">
+                    <li class="nav-item"><a href="{% url 'osteopathy_about_page' %}">Osteopatia - Sobre</a></li>
+                    <hr class="nav-item-separator">
+                    <li class="nav-item"><a href="{% url 'osteopathy_cases_page' %}">Osteopatia - Casos</a></li>
+                    <hr class="nav-item-separator">
+                    <li class="nav-item"><a href="{% url 'osteopathy_history_page' %}">Osteopatia - História</a></li>
+                    <hr class="nav-item-separator">
+                    <li class="nav-item"><a href="{% url 'scheduling_page' %}">Marcações</a></li>
+                    <hr class="nav-item-separator">
                     <li class="nav-item"><a href="#contacts">Contactos</a></li>
                 </ul>
             </div>

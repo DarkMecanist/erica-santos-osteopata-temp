@@ -26,7 +26,8 @@ SECRET_KEY = "ua683$qseecgtjq7+c4#xf#j-3tu)f5hif)8ob^jc1q0c3rz)5"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://erica-santos-osteopata.herokuapp.com/']
+# ALLOWED_HOSTS = ['https://erica-santos-osteopata.herokuapp.com/']
+ALLOWED_HOSTS = []
 
 
 # Application definition

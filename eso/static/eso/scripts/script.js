@@ -15,6 +15,18 @@ app.controller('mainCtrl', function ($scope, $http, $window) {
        nav_item_expansive_element.classList.remove("expanded");
     };
 
+    $scope.navButtonActivate = function () {
+        let dropdown_nav = document.getElementById("nav-menu-expandable");
+
+        if (dropdown_nav.classList.contains("expanded")) {
+            console.log("Hidding nav");
+            $scope.hideNavMenu(dropdown_nav)
+        } else {
+            console.log("Displaying nav");
+            $scope.showNavMenu(dropdown_nav);
+        }
+    };
+
     $scope.validateAppointmentForm = function () {
         let elem_name = document.getElementById("appointment-form-name");
         let elem_phone = document.getElementById("appointment-form-phone");

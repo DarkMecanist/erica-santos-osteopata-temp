@@ -54,7 +54,6 @@ def scheduling_page(request):
             google_calendar.insert_event(summary=summary, description=description, location="Clinica",
                                          start_datetime=start_datetime, end_datetime=end_datetime,
                                          attendee_emails=["jmoutinho94@gmail.com"])
-
             account_information = get_object_or_404(AccountInformation)
 
             gmail = Gmail(account_email=account_information.google_account_email,
@@ -63,7 +62,8 @@ def scheduling_page(request):
                              body=description)
 
             return JsonResponse({"status": "successful"}, status=200)
-        except Exception:
+        except Exception as e:
+            print(e)
             return JsonResponse({"status": "failed"}, status=200)
 
     return render(request=request, template_name='eso/scheduling_page.html', context=context)

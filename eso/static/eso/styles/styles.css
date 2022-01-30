@@ -73,6 +73,19 @@ li {
     margin: 30px 0 40px 10px;
 }
 
+#navbarToggle {
+    border-radius: 5px;
+    border: 3px solid #262626;
+    background-color: #fafaea;
+    padding: 0 5px;
+    width: 50px;
+    height: 50px;
+    /*position: static;*/
+    /*float: right;*/
+    margin-top: auto;
+    display: none;
+}
+
 .nav-menu {
     float: right;
     font-size: 1.5em;
@@ -86,6 +99,36 @@ li {
 
 .nav-item a {
     color: #fafaea;
+}
+
+#nav-menu-expandable.expanded {
+    height: 380px;
+    opacity: 100%;
+}
+
+#nav-menu-expandable {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: stretch;
+    width: 35%;
+    height: 0;
+    background-color: #2E7044;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: all .2s linear;
+    opacity: 0;
+}
+
+#nav-menu-expandable .nav-item {
+    /*align-self: center;*/
+    width: 100%;
+}
+
+.nav-item-separator {
+    width: 90%;
+    margin: 0 auto;
 }
 
 #main-content {
@@ -243,6 +286,16 @@ h1 {
     .container {
         width: 893px;
     }
+
+    #nav-menu-regular {
+        display: none;
+    }
+
+    #navbarToggle {
+        display: inline-block;
+        float: right;
+        margin-top: 35px;
+    }
 }
 
 /********** Small devices only **********/
@@ -250,6 +303,17 @@ h1 {
     .container {
         width: 668px;
     }
+
+    #nav-menu-regular {
+        display: none;
+    }
+
+    #navbarToggle {
+        display: inline-block;
+        float: right;
+        margin-top: 35px;
+    }
+
 }
 
 /********** Extra small devices only **********/
@@ -257,11 +321,40 @@ h1 {
     .container {
         width: 380px;
     }
+
+    #nav-menu-regular {
+        display: none;
+    }
+
+    #navbarToggle {
+        display: inline-block;
+        float: right;
+        margin-top: 35px;
+    }
+
+    #nav-menu-expandable {
+        width: 100%;
+    }
+
+    #nav-menu-expandable.expanded {
+        height: 240px;
+
+    }
 }
 
 /********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
 @media (max-width: 479px) {
     .container {
         width: 429px;
+    }
+
+    #nav-menu-regular {
+        display: none;
+    }
+
+    #navbarToggle {
+        display: inline-block;
+        float: right;
+        margin-top: 35px;
     }
 }
