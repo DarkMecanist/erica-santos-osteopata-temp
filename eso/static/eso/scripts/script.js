@@ -19,10 +19,8 @@ app.controller('mainCtrl', function ($scope, $http, $window) {
         let dropdown_nav = document.getElementById("nav-menu-expandable");
 
         if (dropdown_nav.classList.contains("expanded")) {
-            console.log("Hidding nav");
             $scope.hideNavMenu(dropdown_nav)
         } else {
-            console.log("Displaying nav");
             $scope.showNavMenu(dropdown_nav);
         }
     };
@@ -203,7 +201,6 @@ app.controller('mainCtrl', function ($scope, $http, $window) {
     };
 
     $scope.loading = function (element_to_replace, element_response) {
-        console.log(element_to_replace);
         element_to_replace.remove();
         angular.element(element_response).removeClass("hidden");
     };
