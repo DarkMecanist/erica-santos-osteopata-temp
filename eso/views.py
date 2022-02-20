@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
 from .models import TextPresentation, Opinion, OsteopathyAbout, OsteopathyCase, OsteopathyHistory,\
-    AppointmentsDescription, AccountInformation
+    AppointmentsDescription, AccountInformation, OsteopathyAdvantages
 from .backend import GoogleCalendar, Gmail
 import datetime
 import os
@@ -19,7 +19,11 @@ def home_page(request):
 
 def osteopathy_about_page(request):
     osteopathy_about = get_object_or_404(OsteopathyAbout)
-    context = {"osteopathy_about": osteopathy_about}
+    # osteopathy_about.image_who = "test"
+    osteopathy_advantages = OsteopathyAdvantages.objects.all()
+    context = {
+        "osteopathy_about": osteopathy_about,
+        "osteopathy_advantages": osteopathy_advantages}
 
     return render(request=request, template_name='eso/osteopathy_about_page.html', context=context)
 

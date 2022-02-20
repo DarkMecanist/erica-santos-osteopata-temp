@@ -15,6 +15,10 @@ body {
     font-family: 'Amiri', serif;
 }
 
+pre {
+    font-family: 'Amiri', serif;
+}
+
 a, a:hover {
     text-decoration: none;
     color: #2E7044;
@@ -160,6 +164,11 @@ li {
     text-align: center;
 }
 
+.footer-info-block a {
+    display: inline-block;
+    color: #fafaea;
+}
+
 .flex {
     display: flex;
 }
@@ -252,7 +261,7 @@ h1 {
     margin-left: 20px;
 }
 
-#contacts-opinion-link:hover {
+#contacts-opinion-link:hover, .footer-info-block a:hover, .contact-link:hover  {
     font-weight: bold;
 }
 
@@ -263,6 +272,36 @@ h1 {
 .response-message {
     font-weight: bold;
     font-size: 1.2em;
+}
+
+.scalable-img {
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#presentation-logo {
+    width: 35%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#osteopathy_advantages li {
+    list-style: circle;
+}
+
+#container-history {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#image_history {
+    width: 20%;
+    margin-right: 30px;
 }
 
 
@@ -327,7 +366,7 @@ h1 {
         font-size: 1em;
     }
 
-    .footer-info-block iframe {
+    .footer-info-block a {
         width: 150px;
     }
 
@@ -371,9 +410,8 @@ h1 {
         display: none;
     }
 
-    .footer-info-block iframe {
+    .footer-info-block a {
         width: 150px;
-        height: 100px;
     }
 }
 
@@ -432,9 +470,8 @@ h1 {
         display: none;
     }
 
-    .footer-info-block iframe {
+    .footer-info-block a {
         width: 150px;
-        height: 70px;
     }
 
     h1 {

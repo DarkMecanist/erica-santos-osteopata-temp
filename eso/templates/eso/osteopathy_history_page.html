@@ -1,9 +1,11 @@
 {% extends "eso/base.html" %}
 
 {% block main-content %}
-
-<h1>História da Osteopatia</h1>
-<div>{{osteopathy_history.text}}</div>
-
+    <h1>História da Osteopatia</h1>
+    <div>{{osteopathy_history.text}}</div>
+    <div id="container-history">
+        <img id="image_history" class="scalable-img" src="{{osteopathy_history.image.url}}" alt="Imagem História">
+        <label for="image_history"><b>{{osteopathy_history.quote_image}}</b></label>
+    </div>
 {% endblock %}
 
