@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Érica Santos - Osteopata</title>
+        <title>Drª Érica Santos - Osteopata</title>
         <link rel="icon" href="{% static 'eso/media/logo.png' %}" type="image/x-icon">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@1&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
             <div class="container">
                 <div id="brand">
                     <img id="brand-img" src="{% static 'eso/media/logo.png' %}" alt="">
-                    <div id="brand-name">Érica Santos</div>
+                    <div id="brand-name">Drª Érica Santos</div>
                 </div>
                 <button id="navbarToggle" type="button" class="navbar-toggle collapsed hidden-xl hidden-l hidden-m"
                         data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false"
@@ -31,8 +31,8 @@
                     <li class="nav-item nav-item-expansive">
                         <a href="{% url 'osteopathy_about_page' %}">Osteopatia</a>
                         <a href="{% url 'osteopathy_about_page' %}">Sobre</a>
-                        <a href="{% url 'osteopathy_cases_page' %}">Casos</a>
                         <a href="{% url 'osteopathy_history_page' %}">História</a>
+                        <a href="{% url 'pediatric_osteopathy_page' %}">Pediátrica</a>
                     </li>
                     <li class="nav-item"><a href="{% url 'scheduling_page' %}">Marcações</a></li>
                     <li class="nav-item"><a href="#contacts">Contactos</a></li>
@@ -42,9 +42,9 @@
                     <hr class="nav-item-separator">
                     <li class="nav-item"><a href="{% url 'osteopathy_about_page' %}">Osteopatia - Sobre</a></li>
                     <hr class="nav-item-separator">
-                    <li class="nav-item"><a href="{% url 'osteopathy_cases_page' %}">Osteopatia - Casos</a></li>
-                    <hr class="nav-item-separator">
                     <li class="nav-item"><a href="{% url 'osteopathy_history_page' %}">Osteopatia - História</a></li>
+                    <hr class="nav-item-separator">
+                    <li class="nav-item"><a href="{% url 'pediatric_osteopathy_page' %}">Osteopatia Pediátrica</a></li>
                     <hr class="nav-item-separator">
                     <li class="nav-item"><a href="{% url 'scheduling_page' %}">Marcações</a></li>
                     <hr class="nav-item-separator">
@@ -92,7 +92,7 @@
                 </div>
                 <div class="footer-info-block">
                     <div class="footer-title">Onde nos encontrar:</div>
-                    <a href="https://goo.gl/maps/wLdJufHqeFerkUSR7">R. Padre Vicente Mª da Rocha nº400, BI. F, R/c Dto, Fração CV, 3840-453 Vagos</a>
+                    <a href="https://goo.gl/maps/wLdJufHqeFerkUSR7" target="_blank">R. Padre Vicente Mª da Rocha nº400, BI. F, R/c Dto, Fração CV, 3840-453 Vagos</a>
                 </div>
                 <div class="footer-info-block">
                     <a href="{% url 'opinion_page' %}" id="contacts-opinion-link">

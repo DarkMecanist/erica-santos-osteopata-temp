@@ -1,25 +1,31 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
-from .models import TextPresentation, Opinion, OsteopathyAbout, OsteopathyCase, OsteopathyHistory,\
-    AppointmentsDescription, AccountInformation, OsteopathyAdvantages
+from .models import TextPresentation, TextPresentationParagrapth, TextPresentationSpecialization, OsteopathyAbout,\
+    OsteopathyCase, OsteopathyHistory, AppointmentsDescription, AccountInformation, OsteopathyAdvantages,\
+    PediatricOstepathy, PediatricOstepathyReasons, Opinion
 from .backend import GoogleCalendar, Gmail
 import datetime
-import os
 
 APPOINTMENT_DURATION_MIN = 60
 
 
 def home_page(request):
     presentation_text = get_object_or_404(TextPresentation)
+    paragraphs = TextPresentationParagrapth.objects.all()
+    specializations = TextPresentationSpecialization.objects.all()
     opinions = Opinion.objects.filter(is_valid=True)
-    context = {"presentation_text": presentation_text, "opinions": opinions}
+    context = {
+        "presentation_text": presentation_text,
+        "paragraphs": paragraphs,
+        "specializations": specializations,
+        "opinions": opinions
+    }
 
     return render(request=request, template_name='eso/index.html', context=context)
 
 
 def osteopathy_about_page(request):
     osteopathy_about = get_object_or_404(OsteopathyAbout)
-    # osteopathy_about.image_who = "test"
     osteopathy_advantages = OsteopathyAdvantages.objects.all()
     context = {
         "osteopathy_about": osteopathy_about,
@@ -97,3 +103,15 @@ def opinion_page(request):
             return JsonResponse({"status": "failed"}, status=200)
 
     return render(request=request, template_name='eso/opinion_page.html')
+
+
+def pediatric_osteopathy_page(request):
+    pediatric_osteopathy = get_object_or_404(PediatricOstepathy)
+    pediatric_osteopathy_reasons = PediatricOstepathyReasons.objects.all()
+
+    context = {
+        "pediatric_osteopathy": pediatric_osteopathy,
+        "pediatric_osteopathy_reasons": pediatric_osteopathy_reasons}
+
+    return render(request=request, template_name='eso/pediatric_osteopathy.html', context=context)
+

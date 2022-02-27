@@ -3,7 +3,18 @@
 
 {% block main-content %}
     <img id="presentation-logo" src="{% static 'eso/media/logo_full.png' %}" alt="Logo">
-    <div>{{presentation_text.text}}</div>
+    <div id="credentials">{{presentation_text.credentials}}</div>
+    {% for paragraph in paragraphs %}
+        <p>{{paragraph.paragraph}}</p>
+        {% if forloop.counter0 == 3 %}
+            <ul id="specializations">
+                {% for specialization in specializations %}
+                    <li>{{specialization.specialization}}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endfor %}
+
     {% if opinions.count > 0 %}
         <div id="opinion-carousel">
         <div id="opinion-container" class="opinion-container">

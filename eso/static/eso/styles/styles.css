@@ -288,7 +288,12 @@ h1 {
     margin-right: auto;
 }
 
-#osteopathy_advantages li {
+#credentials {
+    text-align: center;
+    font-weight: bold;
+}
+
+#osteopathy_advantages li, #pediatric_osteopathy_reasons li, #specializations li {
     list-style: circle;
 }
 

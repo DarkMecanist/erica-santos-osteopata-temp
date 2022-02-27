@@ -2,10 +2,24 @@ from django.db import models
 
 
 class TextPresentation(models.Model):
-    text = models.TextField()
+    credentials = models.TextField()
 
     def __str__(self):
         return "Apresentação"
+
+
+class TextPresentationParagrapth(models.Model):
+    paragraph = models.TextField()
+
+    def __str__(self):
+        return "Parágrafo - " + str(self.paragraph)
+
+
+class TextPresentationSpecialization(models.Model):
+    specialization = models.TextField()
+
+    def __str__(self):
+        return "Especialização - " + str(self.specialization)
 
 
 class Opinion(models.Model):
@@ -78,3 +92,18 @@ class AccountInformation(models.Model):
 
     def __str__(self):
         return "Informação Contas"
+
+
+class PediatricOstepathy(models.Model):
+    top_text = models.TextField()
+    bottom_text = models.TextField()
+
+    def __str__(self):
+        return "Osteopatia Pediátrica"
+
+
+class PediatricOstepathyReasons(models.Model):
+    reason = models.TextField()
+
+    def __str__(self):
+        return "Razão Osteopatia Pediátrica - " + str(self.reason)

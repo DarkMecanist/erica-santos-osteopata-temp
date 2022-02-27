@@ -1,0 +1,18 @@
+{% extends "eso/base.html" %}
+
+{% block main-content %}
+
+    <h1>Osteopatia Pediátrica</h1>
+
+    <div>{{pediatric_osteopathy.top_text}}</div>
+    <ul id="pediatric_osteopathy_reasons">
+        {% for reason in pediatric_osteopathy_reasons %}
+            <li>{{reason.reason}}</li>
+        {% endfor %}
+    </ul>
+    <div>{{pediatric_osteopathy.bottom_text}}</div>
+
+
+
+{% endblock %}
+
