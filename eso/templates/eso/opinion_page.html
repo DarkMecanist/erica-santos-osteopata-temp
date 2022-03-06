@@ -5,8 +5,10 @@
 {% block main-content %}
 
 
-<h3>Já teve a sua consulta? Deixe-nos a sua opinião</h3>
-<form method="POST" name="opinion-form" action="/opiniao/">
+<h1 id="opinion-title">A sua Opinião</h1>
+
+<div class="container-form">
+    <form method="POST" name="opinion-form" action="/opiniao/">
     {% csrf_token %}
     <div class="opinion-form-field">
         <label for="opinion-form-name">Nome: </label>
@@ -16,10 +18,12 @@
         <label for="opinion-form-post">Opinião: </label>
         <textarea type="text" id="opinion-form-post" class="opinion-input" name="opinion" maxlength="300"></textarea>
     </div>
-</form>
-<button class="standard-button" id="opinion-form-button-submit" ng-click="validateOpinionForm()" name="opinion-form">Submeter Opinião</button>
-<div id="request-response-opinion" class="hidden">
-    <img src="{% static 'eso/media/ajax-loader.gif' %}" alt="loading...">
+    </form>
+    <button class="standard-button" id="opinion-form-button-submit" ng-click="validateOpinionForm()" name="opinion-form">Submeter Opinião</button>
+    <div id="request-response-opinion" class="hidden">
+        <img src="{% static 'eso/media/ajax-loader.gif' %}" alt="loading...">
+    </div>
 </div>
+
 
 {% endblock %}

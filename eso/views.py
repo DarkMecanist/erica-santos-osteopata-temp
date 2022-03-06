@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
 from .models import TextPresentation, TextPresentationParagrapth, TextPresentationSpecialization, OsteopathyAbout,\
     OsteopathyCase, OsteopathyHistory, AppointmentsDescription, AccountInformation, OsteopathyAdvantages,\
-    PediatricOstepathy, PediatricOstepathyReasons, Opinion
+    PediatricOstepathy, PediatricOstepathyReasons, Opinion, AppointmentGeneralInformation, AppointmentsImportantNotes
 from .backend import GoogleCalendar, Gmail
 import datetime
 
@@ -49,8 +49,14 @@ def osteopathy_history_page(request):
 
 
 def scheduling_page(request):
-    appointments_description = get_object_or_404(AppointmentsDescription)
-    context = {"appointments_description": appointments_description}
+    appointments_descriptions = AppointmentsDescription.objects.all()
+    appointments_important_notes = AppointmentsImportantNotes.objects.all()
+    appointments_general_information = get_object_or_404(AppointmentGeneralInformation)
+    context = {
+        "appointments_descriptions": appointments_descriptions,
+        "appointments_important_notes": appointments_important_notes,
+        "appointments_general_information": appointments_general_information
+    }
 
     if request.method == "POST" and request.POST.get("form") == 'appointment':
         try:

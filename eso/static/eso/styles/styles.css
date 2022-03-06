@@ -1,6 +1,13 @@
+@font-face {
+    font-family: 'BauhausCustom';
+    src: url('fonts/BauhausRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 ::selection {
-    color: #fafaea;
-    background-color: #2E7044;
+    color: #fafafa;
+    background-color: #4B7540;
 }
 
 html {
@@ -9,19 +16,20 @@ html {
 
 body {
     box-sizing: border-box;
-    background-color: #fafaea;
-    color: #2E7044;
+    background-color: #fafafa;
+    color: #4B7540;
     margin: 0;
-    font-family: 'Amiri', serif;
+    font-family: 'BauhausCustom';
+    font-size: 1em;
 }
 
-pre {
-    font-family: 'Amiri', serif;
+pre, button {
+    font-family: 'BauhausCustom', serif;
 }
 
 a, a:hover {
     text-decoration: none;
-    color: #2E7044;
+    color: #4B7540;
 }
 
 li {
@@ -31,7 +39,7 @@ li {
 #navbar {
     position: fixed;
     display: block;
-    background-color: #2E7044;
+    background-color: #4B7540;
     width: 100%;
     height: 120px;
     z-index: 5;
@@ -40,7 +48,7 @@ li {
 .nav-item {
     display: grid;
     height: 40px;
-    background-color: #2E7044;
+    background-color: #4B7540;
     overflow: hidden;
     transition: all .2s linear;
     text-align: center;
@@ -72,15 +80,15 @@ li {
 
 #brand-name {
     float: left;
-    color: #fafaea;
+    color: #fafafa;
     font-size: 2.5em;
-    margin: 30px 0 40px 10px;
+    margin: 35px 0 40px 10px;
 }
 
 #navbarToggle {
     border-radius: 5px;
     border: 3px solid #262626;
-    background-color: #fafaea;
+    background-color: #fafafa;
     padding: 0 5px;
     width: 50px;
     height: 50px;
@@ -101,8 +109,12 @@ li {
     margin-right: 15px;
 }
 
+.nav-item-expansive a:nth-child(2) {
+    margin-top: 10px;
+}
+
 .nav-item a {
-    color: #fafaea;
+    color: #fafafa;
 }
 
 #nav-menu-expandable.expanded {
@@ -118,7 +130,7 @@ li {
     align-items: stretch;
     width: 35%;
     height: 0;
-    background-color: #2E7044;
+    background-color: #4B7540;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -127,8 +139,8 @@ li {
 }
 
 #nav-menu-expandable .nav-item {
-    /*align-self: center;*/
     width: 100%;
+    padding-top: 10px;
 }
 
 .nav-item-separator {
@@ -143,8 +155,8 @@ li {
 }
 
 #contacts {
-    background-color: #2E7044;
-    color: #fafaea;
+    background-color: #4B7540;
+    color: #fafafa;
     height: 140px;
     width: 100%;
     margin-top: 20px;
@@ -159,6 +171,10 @@ li {
     justify-content: space-between;
 }
 
+.footer-info-block {
+    margin-top: 15px;
+}
+
 #contacts .footer-info-block{
     align-self: center;
     text-align: center;
@@ -166,7 +182,7 @@ li {
 
 .footer-info-block a {
     display: inline-block;
-    color: #fafaea;
+    color: #fafafa;
 }
 
 .flex {
@@ -175,7 +191,8 @@ li {
 
 .footer-title {
     font-size: 25px;
-    color: #fafaea;
+    margin-bottom: 15px;
+    color: #fafafa;
 }
 
 .footer-list {
@@ -190,7 +207,7 @@ li {
 
 .contact-column a {
     display: flex;
-    color: #fafaea;
+    color: #fafafa;
 }
 
 .contact-column a div {
@@ -207,7 +224,7 @@ h1 {
     text-shadow: #4f4f4f 0.5px 0.5px;
     font-size: 3em;
     border-bottom: solid 3px #4f4f4f;
-    width: 500px;
+    width: 600px;
     margin: 20px auto;
 }
 
@@ -225,8 +242,8 @@ h1 {
     align-items: center;
     overflow-x: hidden;
     width: 100%;
-    color: #fafaea;
-    background-color: #2E7044;
+    color: #fafafa;
+    background-color: #4B7540;
 }
 
 .opinion {
@@ -247,11 +264,6 @@ h1 {
     margin-left: 35px;
 }
 
-#opinion-form-post {
-    width: 50%;
-    height: 150px;
-}
-
 .opinion-form-field {
     display: flex;
     align-items: center;
@@ -259,6 +271,10 @@ h1 {
 
 .opinion-input {
     margin-left: 20px;
+}
+
+#opinion-title {
+    font-size: 2.5em;
 }
 
 #contacts-opinion-link:hover, .footer-info-block a:hover, .contact-link:hover  {
@@ -293,7 +309,7 @@ h1 {
     font-weight: bold;
 }
 
-#osteopathy_advantages li, #pediatric_osteopathy_reasons li, #specializations li {
+#osteopathy_advantages li, #pediatric_osteopathy_reasons li, #specializations li, .list-with-decorators {
     list-style: circle;
 }
 
@@ -308,6 +324,89 @@ h1 {
     width: 20%;
     margin-right: 30px;
 }
+
+table {
+    width: 500px;
+    color: white;
+    padding: 5px;
+}
+
+table tr, table th {
+    border: 1px solid #fafafa;
+}
+
+tr {
+    background-color: #4B7540;
+}
+
+.table_empty_cell {
+    background-color: #fafafa;
+}
+
+.centered-text {
+    text-align: center;
+}
+
+.container-form {
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    background-color: #4B7540;
+    color: #fafafa;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+}
+
+button {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+    background-color: #4B7540;
+    color: #fafafa;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    transition: all .2s linear;
+}
+
+button:hover {
+    border-radius: 20px;
+    background-color: #fafafa;
+    color: #4B7540;
+    font-weight: bold;
+}
+
+#opinions-link a {
+    padding: 15px;
+    transition: all .2s linear;
+}
+
+#opinions-link a:hover {
+    font-weight: bolder;
+    background-color: #4B7540;
+    color: #fafafa;
+    border-radius: 50%;
+}
+
+.centered-element {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 
 /* MEDIA QUERIES */
@@ -332,7 +431,7 @@ h1 {
         width: 893px;
     }
 
-    #nav-menu-regular {
+    #nav-menu-regular, #contacts {
         display: none;
     }
 
@@ -340,6 +439,10 @@ h1 {
         display: inline-block;
         float: right;
         margin-top: 35px;
+    }
+
+    #main-content {
+        margin-bottom: 50px;
     }
 }
 
@@ -349,7 +452,7 @@ h1 {
         width: 668px;
     }
 
-    #nav-menu-regular {
+    #nav-menu-regular, #contacts {
         display: none;
     }
 
@@ -362,6 +465,7 @@ h1 {
     #opinion-carousel {
         width: 668px;
     }
+
     .opinion {
         max-width: 668px;
         min-width: 668px;
@@ -375,7 +479,13 @@ h1 {
         width: 150px;
     }
 
+    #main-content {
+        margin-bottom: 50px;
+    }
 
+    #nav-menu-expandable.expanded {
+        height: 320px;
+    }
 }
 
 /********** Extra small devices only **********/
@@ -384,7 +494,7 @@ h1 {
         width: 380px;
     }
 
-    #nav-menu-regular {
+    #nav-menu-regular, #contacts, #brand-name {
         display: none;
     }
 
@@ -398,8 +508,12 @@ h1 {
         width: 100%;
     }
 
+    #nav-menu-expandable .nav-item{
+        padding-bottom: 15px;
+    }
+
     #nav-menu-expandable.expanded {
-        height: 240px;
+        height: 280px;
     }
 
     #opinion-carousel {
@@ -418,6 +532,36 @@ h1 {
     .footer-info-block a {
         width: 150px;
     }
+
+    #main-content {
+        margin-bottom: 50px;
+    }
+
+    body {
+        font-size: 0.9em;
+    }
+
+    #presentation-logo, h1 {
+        width: 250px;
+    }
+
+    table {
+        width: 380px;
+    }
+
+    form {
+        width: 350px;
+    }
+
+    #opinions-link a {
+        transition: none;
+    }
+
+    #opinions-link a:hover {
+        background-color: #fafafa;
+        color: #4B7540;
+    }
+
 }
 
 /********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
@@ -426,12 +570,13 @@ h1 {
         width: 90%
     }
 
-    #nav-menu-regular {
+    #nav-menu-regular, #contacts, #brand-name {
         display: none;
     }
 
     #nav-menu-expandable {
         width: 100%;
+        margin-top: -25px;
     }
 
     #nav-menu-expandable.expanded {
@@ -462,13 +607,9 @@ h1 {
         font-size: 1.1em;
     }
 
-     #main-content {
+    #main-content {
         padding-top: 80px;
-    }
-
-
-    #contacts {
-        height: 80px;
+        margin-bottom: 50px;
     }
 
     .footer-title, .contact-column a div {
@@ -486,8 +627,34 @@ h1 {
     #opinion-carousel {
         width: 280px;
     }
+
     .opinion {
         max-width: 280px;
         min-width: 280px;
+    }
+
+    body {
+        font-size: 0.9em;
+    }
+
+    #presentation-logo, h1 {
+        width: 250px;
+    }
+
+    table {
+        width: 340px;
+    }
+
+    form {
+        width: 300px;
+    }
+
+    #opinions-link a {
+        transition: none;
+    }
+
+    #opinions-link a:hover {
+        background-color: #fafafa;
+        color: #4B7540;
     }
 }

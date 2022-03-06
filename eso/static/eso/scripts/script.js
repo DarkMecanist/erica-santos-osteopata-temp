@@ -13,6 +13,7 @@ app.controller('mainCtrl', function ($scope, $http, $window) {
 
     $scope.hideNavMenu = function (nav_item_expansive_element) {
        nav_item_expansive_element.classList.remove("expanded");
+       console.log("triggerring hide")
     };
 
     $scope.navButtonActivate = function () {
@@ -145,11 +146,13 @@ app.controller('mainCtrl', function ($scope, $http, $window) {
 
     $scope.highlightInvalidFields = function (invalid_elements, all_elements) {
         for (let i=0; i<all_elements.length; i++) {
-            all_elements[i].style.boxShadow = "";
+            // all_elements[i].style.boxShadow = "";
+            all_elements[i].style.backgroundColor = "white";
         }
 
         for (let i=0; i<invalid_elements.length; i++) {
-            invalid_elements[i].style.boxShadow = "0 0 5px rgba(152, 49, 20, 1)";
+            // invalid_elements[i].style.boxShadow = "0 0 5px rgba(152, 49, 20, 1)";
+            invalid_elements[i].style.backgroundColor = "#FFCCCC";
         }
     };
 
@@ -221,4 +224,7 @@ app.controller('mainCtrl', function ($scope, $http, $window) {
     }
 
     setActiveOpinion();
+    document.getElementById("main-content").addEventListener("click", function () {
+        $scope.hideNavMenu(document.getElementById("nav-menu-expandable"))})
+
 });

@@ -15,8 +15,10 @@
         <nav id="navbar">
             <div class="container">
                 <div id="brand">
-                    <img id="brand-img" src="{% static 'eso/media/logo.png' %}" alt="">
-                    <div id="brand-name">Drª Érica Santos</div>
+                    <a href="{% url 'home_page' %}">
+                        <img id="brand-img" src="{% static 'eso/media/logo.png' %}" alt="">
+                        <div id="brand-name">Drª Érica Santos</div>
+                    </a>
                 </div>
                 <button id="navbarToggle" type="button" class="navbar-toggle collapsed hidden-xl hidden-l hidden-m"
                         data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false"
@@ -35,7 +37,7 @@
                         <a href="{% url 'pediatric_osteopathy_page' %}">Pediátrica</a>
                     </li>
                     <li class="nav-item"><a href="{% url 'scheduling_page' %}">Marcações</a></li>
-                    <li class="nav-item"><a href="#contacts">Contactos</a></li>
+                    <!--<li class="nav-item"><a href="#contacts">Contactos</a></li>-->
                 </ul>
                 <ul id="nav-menu-expandable" class="nav-menu">
                     <li class="nav-item"><a href="{% url 'home_page' %}">Home</a></li>
@@ -92,7 +94,10 @@
                 </div>
                 <div class="footer-info-block">
                     <div class="footer-title">Onde nos encontrar:</div>
-                    <a href="https://goo.gl/maps/wLdJufHqeFerkUSR7" target="_blank">R. Padre Vicente Mª da Rocha nº400, BI. F, R/c Dto, Fração CV, 3840-453 Vagos</a>
+                    <a href="https://goo.gl/maps/wLdJufHqeFerkUSR7" target="_blank">
+                        <div>R. Padre Vicente Mª da Rocha nº400, BI. F,</div>
+                        <div>R/c Dto, Fração CV, 3840-453 Vagos</div>
+                    </a>
                 </div>
                 <div class="footer-info-block">
                     <a href="{% url 'opinion_page' %}" id="contacts-opinion-link">

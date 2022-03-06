@@ -82,7 +82,26 @@ class AppointmentsDescription(models.Model):
     text = models.TextField()
 
     def __str__(self):
-        return "Descrição Marcações"
+        return "Descrição Marcações - " + str(self.text)
+
+
+class AppointmentsImportantNotes(models.Model):
+    text = models.TextField()
+
+    def __str__(self):
+        return "Notas importantes Marcações - " + str(self.text)
+
+
+class AppointmentGeneralInformation(models.Model):
+    first_appointment_min_time = models.TextField()
+    first_appointment_max_time = models.TextField()
+    first_appointment_base_price = models.TextField()
+    second_appointment_min_time = models.TextField()
+    second_appointment_max_time = models.TextField()
+    second_appointment_base_price = models.TextField()
+
+    def __str__(self):
+        return "Preços e durações das marcações"
 
 
 class AccountInformation(models.Model):

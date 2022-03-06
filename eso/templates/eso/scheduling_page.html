@@ -6,8 +6,46 @@
 
 <h1>Marcações</h1>
 
-<div><b>Informação importante: </b>{{appointments_description.text}}</div>
-<form method="POST" name="appointment-form" action="/marcacoes/">
+<h2>PREÇÁRIO</h2>
+<div>
+    <table>
+        <tr>
+            <th class="table_empty_cell"></th>
+            <th>Duração</th>
+            <th>Preço</th>
+        </tr>
+        <tr>
+            <th>1ª Consulta</th>
+            <th>{{appointments_general_information.first_appointment_min_time}} - {{appointments_general_information.first_appointment_max_time}} minutos</th>
+            <th>{{appointments_general_information.first_appointment_base_price}}</th>
+        </tr>
+        <tr>
+            <th>2ª Consulta</th>
+            <th>{{appointments_general_information.second_appointment_min_time}} - {{appointments_general_information.second_appointment_max_time}} minutos</th>
+            <th>{{appointments_general_information.second_appointment_base_price}}</th>
+        </tr>
+    </table>
+</div>
+
+<ul id="appointments-descriptions">
+    {% for appointment_description in appointments_descriptions %}
+        <li class="list-with-decorators">{{appointment_description.text}}</li>
+    {% endfor %}
+</ul>
+
+<h2>NOTAS IMPORTANTES</h2>
+
+<ul id="appointments-important-notes">
+    {% for appointments_important_note in appointments_important_notes %}
+        <li class="list-with-decorators">{{appointments_important_note.text}}</li>
+    {% endfor %}
+</ul>
+
+<hr>
+<h2 class="centered-text">Faça a sua marcação</h2>
+
+<div class="container-form">
+    <form method="POST" name="appointment-form" action="/marcacoes/">
     {% csrf_token %}
     <div class="appointment-form-field">
         <label for="appointment-form-name">Nome: </label>
@@ -34,15 +72,18 @@
     </div>
     <div class="appointment-form-field">
         <label for="appointment-form-description">Descrição do problema: </label>
-        <input type="text" id="appointment-form-description" name="description" maxlength="500">
+        <textarea type="text" id="appointment-form-description" name="description" maxlength="500"></textarea>
     </div>
-</form>
-<button class="standard-button" id="appointment-form-button-submit" ng-click="validateAppointmentForm()" name="appointment-form">Agendar Marcação</button>
-<div id="request-response-appointment" class="hidden">
-    <img src="{% static 'eso/media/ajax-loader.gif' %}" alt="loading...">
+    </form>
+    <button class="standard-button" id="appointment-form-button-submit" ng-click="validateAppointmentForm()" name="appointment-form">Agendar Marcação</button>
+    <div id="request-response-appointment" class="hidden centered-element">
+        <img src="{% static 'eso/media/ajax-loader.gif' %}" alt="loading...">
+    </div>
 </div>
 
-<h3><a href="{% url 'opinion_page' %}">Já teve a sua consulta? Deixe-nos a sua opinião</a></h3>
+<hr>
+
+<h3  id="opinions-link" class="centered-text"><a href="{% url 'opinion_page' %}">Já teve a sua consulta? Deixe-nos a sua opinião</a></h3>
 
 {% endblock %}
 
