@@ -407,7 +407,79 @@ button:hover {
     margin-right: auto;
 }
 
+#container-contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2em;
+}
 
+.contacts-row {
+    background-color: #4B7540;
+    width: 60%;
+    height: 225px;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 0;
+    box-shadow: black 10px 10px 10px;
+    border-radius: 25px;
+}
+
+.contacts-row > a {
+    color: #fafafa;
+    margin: 5px 0;
+}
+
+.contacts-col {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.contacts-col > img {
+    margin-right: 15px;
+    width: 40px;
+}
+
+#location-contacts-row {
+    text-align: center;
+    width: 70%;
+}
+
+#location-contacts-row iframe {
+    margin-top: 25px;
+    width: 90%;
+    height: 350px;
+    box-shadow: black 10px 10px 10px;
+    border-radius: 25px;
+    border: 25px solid black;
+}
+
+hr.contacts-separator {
+    width: 90%;
+    margin: 50px auto;
+    border: 1px solid #4B7540;
+}
+
+#opinion-form-contacts-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 140px;
+    padding: 10px 0;
+}
+
+#opinion-form-contacts-row h2 {
+    color: #fafafa;
+    margin: 0;
+}
+
+#opinion-form-contacts-row img {
+    margin-top: 15px;
+
+}
 
 /* MEDIA QUERIES */
 

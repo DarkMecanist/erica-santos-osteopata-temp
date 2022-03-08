@@ -121,3 +121,8 @@ def pediatric_osteopathy_page(request):
 
     return render(request=request, template_name='eso/pediatric_osteopathy.html', context=context)
 
+
+def contacts_page(request):
+
+    return render(request=request, template_name='eso/contacts_page.html')
+

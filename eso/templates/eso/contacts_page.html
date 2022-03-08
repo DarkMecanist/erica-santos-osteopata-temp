@@ -1,0 +1,43 @@
+{% extends "eso/base.html" %}
+
+{% load static %}
+
+{% block main-content %}
+
+<h1 id="contacts-title">Contactos</h1>
+
+<div id="container-contacts">
+    <div id="main-contacts-row" class="contacts-row">
+        <a href="tel: 910773716" target="_blank" class="contact-link contacts-col">
+            <img src="{% static 'eso/media/phone.png' %}" alt="icon-phone" class="image-contacts">
+            <div>910773716</div>
+        </a>
+        <a href="mailto: osteoericasantos@gmail.com" target="_blank" class="contact-link contacts-col">
+            <img src="{% static 'eso/media/email.png' %}" alt="icon-email" class="image-contacts">
+            <div>osteoericasantos@gmail.com</div>
+        </a>
+        <a href="http:\\www.google.com" target="_blank" class="contact-link contacts-col">
+            <img src="{% static 'eso/media/facebook.png' %}" alt="icon-facebook" class="image-contacts">
+            <div>http://facebook/</div>
+        </a>
+        <a href="http:\\www.google.com" target="_blank" class="contact-link contacts-col">
+            <img src="{% static 'eso/media/instagram.png' %}" alt="icon-instagram" class="image-contacts">
+            <div>http://instagram/</div>
+        </a>
+</div>
+    <hr class="contacts-separator">
+    <div id="location-contacts-row">
+        <h2>Onde nos encontrar</h2>
+        <div>R. Padre Vicente Mª da Rocha nº400, BI. F,</div>
+        <div>R/c Dto, Fração CV, 3840-453 Vagos</div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d757.8865586416358!2d-8.6865629!3d40.5516132!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd23bc9e3e7834ef%3A0xdeac94ebfd07f0ca!2s3840-453%20Vagos!5e0!3m2!1spt-PT!2spt!4v1646771681501!5m2!1spt-PT!2spt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <hr class="contacts-separator">
+    <a href="{% url 'opinion_page' %}" id="opinion-form-contacts-row" class="contacts-row">
+        <h2>Já teve a sua consulta?</h2>
+        <h2>Clique e deixe-nos a sua opinião</h2>
+        <img id="icon-form" src="{% static 'eso/media/form.png' %}" alt="icon-form" class="image-contacts">
+    </a>
+</div>
+
+{% endblock %}
