@@ -416,7 +416,7 @@ button:hover {
 
 .contacts-row {
     background-color: #4B7540;
-    width: 60%;
+    width: 525px;
     height: 225px;
     padding-top: 40px;
     display: flex;
@@ -558,6 +558,10 @@ hr.contacts-separator {
     #nav-menu-expandable.expanded {
         height: 320px;
     }
+
+    #location-contacts-row iframe {
+        height: 200px;
+    }
 }
 
 /********** Extra small devices only **********/
@@ -632,6 +636,20 @@ hr.contacts-separator {
     #opinions-link a:hover {
         background-color: #fafafa;
         color: #4B7540;
+    }
+
+    #location-contacts-row iframe {
+        height: 100px;
+    }
+
+    .contacts-row {
+        width: 420px;
+        height: 225px;
+        font-size: 0.9em;
+    }
+
+    #opinion-form-contacts-row h2 {
+        padding-top: 5px;
     }
 
 }
@@ -728,5 +746,16 @@ hr.contacts-separator {
     #opinions-link a:hover {
         background-color: #fafafa;
         color: #4B7540;
+    }
+
+    .contacts-row {
+        width: 325px;
+        height: 225px;
+        font-size: 0.8em;
+    }
+
+    #opinion-form-contacts-row h2 {
+        padding-top: 20px;
+        font-size: 1.2em;
     }
 }
